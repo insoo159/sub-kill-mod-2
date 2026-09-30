@@ -1,0 +1,19 @@
+{
+  "clientId": "你的 OAuth Client ID",
+  "clientSecret": "你的 OAuth Client Secret",
+  "refreshToken": "你的 refresh token",
+  "killCommand": "kill @a",
+  "pollIntervalSeconds": 30,
+  "triggerCooldownMs": 5000
+}
+
+這個檔案第一次啟動伺服器時，模組會自動在 config/subkill-mod.json 產生一份預設版本，
+你只要把裡面的 clientId / clientSecret / refreshToken 換成真正的值，存檔後重啟伺服器即可。
+
+如何拿到 clientId / clientSecret / refreshToken：
+1. 到 Google Cloud Console 建立專案、啟用 YouTube Data API v3、建立 OAuth 用戶端 ID（桌面應用程式），
+   下載憑證 JSON，裡面有 client_id 和 client_secret。
+2. 在自己電腦上（不是伺服器上）跑一次授權工具拿 refresh_token：如果你手邊還留著我之前給的
+   yt-sub-mc-kill 專案，直接跑裡面的 node auth.js 完成一次瀏覽器授權，
+   完成後打開產生的 token.json，裡面的 "refresh_token" 欄位就是你要填進這裡的值。
+3. 把 client_id、client_secret、refresh_token 三個值分別填進 subkill-mod.json 對應欄位。
