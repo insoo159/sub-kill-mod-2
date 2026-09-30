@@ -1,0 +1,25 @@
+將範本產生器產生的 fabric.mod.json 裡的 entrypoints 區塊改成這樣（其他欄位如 id、version、name 保留範本原本產生的即可，只要改 entrypoints 跟加上 environment）：
+
+{
+  "schemaVersion": 1,
+  "id": "subkill",
+  "version": "1.0.0",
+  "name": "Sub Kill Mod",
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "com.example.subkill.SubKillMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.21",
+    "fabric-api": "*",
+    "java": ">=21"
+  }
+}
+
+注意：
+- "environment": "server" 代表這個模組只會在伺服器端載入，玩家的客戶端完全不需要裝這個模組就能連進來玩。
+- "com.example.subkill.SubKillMod" 要換成你實際的套件路徑（如果範本產生器讓你自訂套件名稱，就照你自己的改）。
+- depends 裡的版本號僅供參考，實際請以範本產生器產生的版本為準，通常範本裡已經幫你填好正確版本，不需要手動改這幾行版本號。
