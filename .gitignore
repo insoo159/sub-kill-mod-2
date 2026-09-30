@@ -1,40 +1,19 @@
-# gradle
-
+# Gradle
 .gradle/
 build/
 out/
-classes/
 
-# eclipse
-
-*.launch
-
-# idea
-
+# IDE
 .idea/
 *.iml
-*.ipr
-*.iws
-
-# vscode
-
-.settings/
 .vscode/
-bin/
-.classpath
-.project
 
-# macos
+# 系統檔案
+.DS_Store
 
-*.DS_Store
-
-# fabric
-
-run/
-
-# java
-
-hs_err_*.log
-replay_*.log
-*.hprof
-*.jfr
+# 千萬不要把含有真實 token 的設定檔傳上 GitHub
+config/
+subkill-mod.json
+*.token.json
+token.json
+credentials.json
